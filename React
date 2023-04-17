@@ -20,7 +20,7 @@
   </body>
 </html> -->
 
-import React from 'react';
+<!-- import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 class Car extends React.Component {
@@ -29,4 +29,23 @@ class Car extends React.Component {
   }
 }
 
-ReactDOM.render(<Car color="red"/>, document.getElementById('root'));
+ReactDOM.render(<Car color="red"/>, document.getElementById('root')); -->
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function Garage(props) {
+  const cars = props.cars;
+  return(
+     <>
+     <h1>Garage</h1>
+     {cars.length >0 && 
+    <h2>You have {cars.length} cars in your garage</h2>
+    }
+     </>
+  );
+}
+
+const cars = ['ford','BMW','Audi'];
+const root = ReactDom.createRoot(document.getElementById('root'));
+root.render(<Garage cars = {cars} />);
