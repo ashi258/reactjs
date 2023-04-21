@@ -78,7 +78,7 @@ export default function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />); -->
 
-import { useState } from "react";
+<!-- import { useState } from "react";
 import ReactDOM from "react-dom/client";
 
 function Component1() {
@@ -108,9 +108,9 @@ function Component3({ user }) {
       <Component4 user={user} />
     </>
   );
-}
+} -->
 
-function Component4({ user }) {
+<!-- function Component4({ user }) {
   return (
     <>
       <h1>Component 4</h1>
@@ -131,4 +131,63 @@ function Component5({ user }) {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Component1 />);
 
-              
+               -->
+
+               import { useReducer } from "react";
+import ReactDOM from "react-dom/client";
+
+const initialTodos = [
+  {
+    id: 1,
+    title: "Todo 1",
+    complete: false,
+  },
+  {
+    id: 2,
+    title: "Todo 2",
+    complete: false,
+  },
+];
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "COMPLETE":
+      return state.map((todo) => {
+        if (todo.id === action.id) {
+          return { ...todo, complete: !todo.complete };
+        } else {
+          return todo;
+        }
+      });
+    default:
+      return state;
+  }
+};
+
+function Todos() {
+  const [todos, dispatch] = useReducer(reducer, initialTodos);
+
+  const handleComplete = (todo) => {
+    dispatch({ type: "COMPLETE", id: todo.id });
+  };
+
+  return (
+    <>
+      {todos.map((todo) => (
+        <div key={todo.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={todo.complete}
+              onChange={() => handleComplete(todo)}
+            />
+            {todo.title}
+          </label>
+        </div>
+      ))}
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Todos />);
