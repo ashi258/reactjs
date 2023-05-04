@@ -331,7 +331,7 @@ function Component5() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Component1 />); -->
-
+<!-- 
 import { useReducer } from "react";
 import ReactDOM from "react-dom/client";
 
@@ -389,4 +389,16 @@ function Todos() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Todos />);
+root.render(<Todos />); -->
+
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello World!";
+</script>
+
+</body>
+</html>
