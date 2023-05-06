@@ -391,7 +391,7 @@ function Todos() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Todos />); -->
 
-<html>
+<!-- <html>
 <body>
 
 <p id="demo"></p>
@@ -401,4 +401,23 @@ document.getElementById("demo").innerHTML = "Hello World!";
 </script>
 
 </body>
-</html>
+</html> -->
+
+function Car(props) {
+  return <li>I am a { props.brand }</li>;
+}
+
+function Garage() {
+  const cars = ['Ford', 'BMW', 'Audi'];
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {cars.map((car) => <Car brand={car} />)}
+      </ul>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
