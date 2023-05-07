@@ -403,7 +403,7 @@ document.getElementById("demo").innerHTML = "Hello World!";
 </body>
 </html> -->
 
-function Car(props) {
+<!-- function Car(props) {
   return <li>I am a { props.brand }</li>;
 }
 
@@ -415,6 +415,22 @@ function Garage() {
       <ul>
         {cars.map((car) => <Car brand={car} />)}
       </ul>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />); -->
+
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand="Ford" />
     </>
   );
 }
