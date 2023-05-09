@@ -422,7 +422,7 @@ function Garage() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Garage />); -->
 
-function Car(props) {
+<!-- function Car(props) {
   return <h2>I am a { props.brand }!</h2>;
 }
 
@@ -436,4 +436,7 @@ function Garage() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Garage />);
+root.render(<Garage />); -->
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<p>Hello</p>);
